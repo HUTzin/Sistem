@@ -1,0 +1,288 @@
+/* ---------- Cores (variáveis) ---------- */
+:root {
+    --fundo: #eef2f3;
+    --texto: #1f2a30;
+    --cabecalho: #2b1d1a;
+    --link: #ffe8d6;
+    --link-ativo: #ffd1a6;
+    --link-visitado: #f2c9a4;
+    --frente: #ffffff;
+    --verso: #1f6f78;
+    --foco: #1f6f78;
+    --caixa: #ffffff;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --fundo: #14191c;
+        --texto: #e6edf0;
+        --cabecalho: #1d1412;
+        --frente: #222b30;
+        --foco: #7fd0d8;
+        --caixa: #1c2327;
+    }
+}
+
+:root[data-theme="dark"] {
+    --fundo: #14191c;
+    --texto: #e6edf0;
+    --cabecalho: #1d1412;
+    --frente: #222b30;
+    --foco: #7fd0d8;
+    --caixa: #1c2327;
+}
+
+/* ---------- Base ---------- */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+    background-color: var(--fundo);
+    color: var(--texto);
+}
+
+/* ---------- Cabeçalho e links (pseudoclasses) ---------- */
+.cabecalho {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px 24px;
+    padding: 16px 24px;
+    background-color: var(--cabecalho);
+}
+
+.cabecalho-titulo {
+    margin: 0;
+    font-size: 1.4rem;
+    color: var(--link);
+}
+
+.cabecalho-menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.cabecalho-link {
+    color: var(--link);
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+}
+
+/* :hover - mouse em cima */
+.cabecalho-link:hover {
+    border-bottom-color: var(--link-ativo);
+}
+
+/* :focus - navegação por Tab */
+.cabecalho-link:focus {
+    color: #ffffff;
+    outline: 3px solid var(--link-ativo);
+    outline-offset: 4px;
+}
+
+/* :active - no momento do clique */
+.cabecalho-link:active {
+    color: var(--link-ativo);
+}
+
+/* :visited - link já visitado */
+.cabecalho-link:visited {
+    color: var(--link-visitado);
+}
+
+/* ---------- Conteúdo ---------- */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 16px 48px;
+}
+
+.apresentacao {
+    max-width: 640px;
+    padding: 56px 0 32px;
+    text-align: center;
+}
+
+.apresentacao h2 {
+    margin: 0 0 12px;
+    font-size: clamp(2rem, 6vw, 3rem);
+    line-height: 1.15;
+}
+
+.apresentacao p {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.bloco {
+    width: 100%;
+    max-width: 960px;
+    padding: 32px 0;
+}
+
+.bloco h3 {
+    margin: 0 0 8px;
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+.instrucao {
+    margin: 0 0 32px;
+    text-align: center;
+}
+
+/* ---------- Cartões lado a lado ---------- */
+.cartoes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+}
+
+.cartao {
+    width: 270px;
+    height: 330px;
+    perspective: 1000px;
+    border-radius: 12px;
+}
+
+.cartao-interno {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.cartao:hover .cartao-interno,
+.cartao:focus-within .cartao-interno {
+    transform: rotateY(180deg);
+}
+
+.cartao:focus {
+    outline: 3px solid var(--foco);
+    outline-offset: 4px;
+}
+
+.cartao-frente,
+.cartao-verso {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 24px;
+    text-align: center;
+    font-size: 1.1rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    backface-visibility: hidden;
+}
+
+.cartao-frente {
+    background-color: var(--frente);
+}
+
+.cartao-verso {
+    background-color: var(--verso);
+    color: #ffffff;
+    transform: rotateY(180deg);
+}
+
+.cartao-emoji {
+    font-size: 3.5rem;
+    line-height: 1;
+}
+
+.cartao-frente p,
+.cartao-verso p {
+    margin: 0;
+}
+
+.cartao-link {
+    color: #ffe8d6;
+    font-weight: bold;
+}
+
+.cartao-link:hover {
+    text-decoration: none;
+}
+
+.cartao-link:focus {
+    outline: 3px solid #ffd1a6;
+    outline-offset: 3px;
+}
+
+.cartao-link:active {
+    color: #ffd1a6;
+}
+
+.cartao-link:visited {
+    color: #f2c9a4;
+}
+
+/* ---------- Como funciona ---------- */
+.lista-estados {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+    margin: 24px 0 0;
+}
+
+.estado {
+    padding: 16px 20px;
+    background-color: var(--caixa);
+    border-left: 4px solid var(--foco);
+    border-radius: 8px;
+}
+
+.estado dt {
+    font-weight: bold;
+    font-family: "Courier New", monospace;
+}
+
+.estado dd {
+    margin: 4px 0 0;
+}
+
+/* ---------- Rodapé ---------- */
+.rodape {
+    padding: 24px;
+    text-align: center;
+    background-color: var(--cabecalho);
+    color: var(--link);
+}
+
+.rodape p {
+    margin: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .cartao-interno {
+        transition: none;
+    }
+}

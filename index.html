@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Confere Aí</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🐧%3C/text%3E%3C/svg%3E">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header class="cabecalho">
+        <h1 class="cabecalho-titulo">Confere Aí</h1>
+        <nav class="cabecalho-menu">
+            <a class="cabecalho-link" href="#cartoes">Cartões</a>
+            <a class="cabecalho-link" href="#como-funciona">Como funciona</a>
+            <a class="cabecalho-link" href="https://developer.mozilla.org/pt-BR/docs/Web/CSS/Pseudo-classes" target="_blank" rel="noopener">Pseudoclasses (MDN)</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="apresentacao">
+            <h2>Será que você sabe a resposta?</h2>
+            <p>Leia a afirmação, vire o cartão e descubra se é mito ou verdade.</p>
+        </section>
+
+        <section class="bloco" id="cartoes">
+            <h3>Mito ou verdade?</h3>
+            <p class="instrucao">Passe o mouse sobre o cartão, toque nele ou navegue com a tecla Tab.</p>
+
+            <div class="cartoes">
+                <article class="cartao" tabindex="0">
+                    <div class="cartao-interno">
+                        <div class="cartao-frente">
+                            <span class="cartao-emoji" aria-hidden="true">🐧</span>
+                            <p>Pinguins conseguem voar como pássaros!</p>
+                        </div>
+                        <div class="cartao-verso">
+                            <span class="cartao-emoji" aria-hidden="true">🌊</span>
+                            <p><strong>Mito.</strong> Pinguins não voam, mas são excelentes nadadores.</p>
+                            <a class="cartao-link" href="https://pt.wikipedia.org/wiki/Pinguim" target="_blank" rel="noopener">Saiba mais</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="cartao" tabindex="0">
+                    <div class="cartao-interno">
+                        <div class="cartao-frente">
+                            <span class="cartao-emoji" aria-hidden="true">⚡</span>
+                            <p>Um raio nunca cai duas vezes no mesmo lugar.</p>
+                        </div>
+                        <div class="cartao-verso">
+                            <span class="cartao-emoji" aria-hidden="true">🗼</span>
+                            <p><strong>Mito.</strong> Prédios altos e torres são atingidos por raios várias vezes.</p>
+                            <a class="cartao-link" href="https://pt.wikipedia.org/wiki/Raio_(meteorologia)" target="_blank" rel="noopener">Saiba mais</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="cartao" tabindex="0">
+                    <div class="cartao-interno">
+                        <div class="cartao-frente">
+                            <span class="cartao-emoji" aria-hidden="true">🍯</span>
+                            <p>O mel nunca estraga.</p>
+                        </div>
+                        <div class="cartao-verso">
+                            <span class="cartao-emoji" aria-hidden="true">✅</span>
+                            <p><strong>Verdade.</strong> Bem armazenado, o mel pode durar por muitos anos.</p>
+                            <a class="cartao-link" href="https://pt.wikipedia.org/wiki/Mel" target="_blank" rel="noopener">Saiba mais</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="cartao" tabindex="0">
+                    <div class="cartao-interno">
+                        <div class="cartao-frente">
+                            <span class="cartao-emoji" aria-hidden="true">🧠</span>
+                            <p>Usamos apenas 10% do cérebro.</p>
+                        </div>
+                        <div class="cartao-verso">
+                            <span class="cartao-emoji" aria-hidden="true">💡</span>
+                            <p><strong>Mito.</strong> Usamos o cérebro todo, com regiões diferentes ativas em cada tarefa.</p>
+                            <a class="cartao-link" href="https://pt.wikipedia.org/wiki/C%C3%A9rebro_humano" target="_blank" rel="noopener">Saiba mais</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="cartao" tabindex="0">
+                    <div class="cartao-interno">
+                        <div class="cartao-frente">
+                            <span class="cartao-emoji" aria-hidden="true">🧱</span>
+                            <p>A Grande Muralha da China é visível do espaço a olho nu.</p>
+                        </div>
+                        <div class="cartao-verso">
+                            <span class="cartao-emoji" aria-hidden="true">🛰️</span>
+                            <p><strong>Mito.</strong> Ela é longa, mas muito estreita para ser vista assim da órbita.</p>
+                            <a class="cartao-link" href="https://pt.wikipedia.org/wiki/Grande_Muralha_da_China" target="_blank" rel="noopener">Saiba mais</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="cartao" tabindex="0">
+                    <div class="cartao-interno">
+                        <div class="cartao-frente">
+                            <span class="cartao-emoji" aria-hidden="true">🍌</span>
+                            <p>A bananeira é uma árvore.</p>
+                        </div>
+                        <div class="cartao-verso">
+                            <span class="cartao-emoji" aria-hidden="true">🌿</span>
+                            <p><strong>Mito.</strong> Ela é uma erva gigante: o &ldquo;tronco&rdquo; é feito de folhas.</p>
+                            <a class="cartao-link" href="https://pt.wikipedia.org/wiki/Bananeira" target="_blank" rel="noopener">Saiba mais</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="bloco" id="como-funciona">
+            <h3>Como o site responde a você</h3>
+            <p class="instrucao">Cada pequena reação visual usa uma pseudoclasse do CSS.</p>
+
+            <dl class="lista-estados">
+                <div class="estado">
+                    <dt>:hover</dt>
+                    <dd>O mouse está em cima: o cartão vira e o link ganha sublinhado.</dd>
+                </div>
+                <div class="estado">
+                    <dt>:focus</dt>
+                    <dd>O elemento foi selecionado com o teclado (Tab): aparece um contorno.</dd>
+                </div>
+                <div class="estado">
+                    <dt>:active</dt>
+                    <dd>O elemento está sendo clicado agora: a cor muda por um instante.</dd>
+                </div>
+                <div class="estado">
+                    <dt>:focus-within</dt>
+                    <dd>Algo dentro do cartão recebeu foco, então o cartão inteiro vira.</dd>
+                </div>
+                <div class="estado">
+                    <dt>:visited</dt>
+                    <dd>O link já foi aberto: ele fica com um tom levemente diferente.</dd>
+                </div>
+            </dl>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <p>Confere Aí &ndash; projeto de estudo com HTML e CSS.</p>
+    </footer>
+</body>
+</html>
